@@ -1,0 +1,73 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+  <body>
+
+    <article>
+      <!-- Home Section Start -->
+      <section class="home section0" id="home">
+        <div class="home-content">
+          <div class="text">
+            <div class="text-one">Welcoming you to,</div>
+            <div class="text-two">CodeBin </div>
+            <div class="text-three">share your code snippets semlessly</div>
+            <div class="text-four">find your pastes <a href="{% url 'find' %}" style="text-decoration:none;color: rgba(47, 163, 47, 0.856);"><span style="color: red;">"</span>here<span style="color: red;">"</span></a></div>
+          </div>
+          <br>
+          <div class="button">
+            <a href="#section2"
+              ><button><span>CREATE</span></button></a
+            >
+          
+          </div>
+        </div>
+      </section>
+      <br />
+
+      <h1 style="text-align: center">Hello MyApp</h1>
+
+      <section class="section2" id="section2">
+        <div class="container">
+          <form action="" method="post">
+            <div class="formdiv">
+              {% csrf_token %}
+              <div class="maindiv maindiv1">
+                <div class="title dark-text">Title</div>
+                <input
+                  name="pastetitle"
+                  type="text"
+                  class="inputtitle textfield"
+                  placeholder="Username"
+                  id="pastetitle"
+                  aria-label="pastetitle"
+                  aria-describedby="basic-addon1"
+                  required
+                />
+              </div>
+
+              <div class="maindiv maindiv2">
+                <div class="pastearea dark-text">Paste Place</div>
+                <textarea
+                  name="pastecontent"
+                  class="inputpaste textfield"
+                  id="pastecontent"
+                  placeholder="Paste Here"
+                ></textarea>
+              </div>
+
+              <div class="maindiv maindiv3" style="align-items: center">
+                <button type="submit" class="mutton">Create Paste</button>
+              </div>
+              <br />
+              {% if message %}
+              <div class="alert alert-success" id="alert">{{ message }}</div>
+              {% endif %}
+            </div>
+          </form>
+        </div>
+      </section>
+
+    {% endblock %}
+  </body>
+</html>

@@ -1,0 +1,101 @@
+{% extends 'base.html' %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+  <body>
+    {% block content %}
+
+    <section class="input" style="padding-top: 12vh;">
+    <h2 style="font-size:45px; padding: 6px;">Find Pastes Here</h2>
+    <form action="" method="post" >
+      <div class="form" >
+        {% csrf_token %}
+        <div class="input-group mb-3" style="width:85%;margin-left: 16px;">
+          <span class="input-group-text" id="basic-addon1">Paste ID</span>
+          <input
+            name="pasteID"
+            type="text"
+            class="form-control"
+            placeholder="Enter Your Paste ID here"
+            id="pasteID"
+            aria-label="pasteID"
+            aria-describedby="basic-addon1"
+            
+          />
+        </div>
+        <div style="display: flex; justify-content: center;">
+          <button type="submit" class="mutton">FIND</button>
+        </div>
+        <br>
+      </div>
+      {% if message %}
+      <div class="alert alert-success alert-dismissible" id="alert">{{ message }}
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+      </div>
+      {% endif %}
+    </form>
+    </section>
+
+    <section class="section2" id="section2">
+      <div class="container">
+        <form action="/" method="post">
+          <div class="formdiv">
+            {% csrf_token %}
+            <div class="maindiv maindiv1">
+              <div class="title dark-text">Title</div>
+              <input
+                name="pastetitle"
+                type="text"
+                class="inputtitle textfield"
+                placeholder="Username"
+                id="pastetitle"
+                aria-label="pastetitle"
+                aria-describedby="basic-addon1"
+                value="{{ paste.pastetitle }}"
+              />
+              
+            </div>
+
+            <div class="maindiv maindiv2">
+              <div class="pastearea dark-text">Paste Place</div>
+              <textarea
+                name="pastecontent"
+                class="inputpaste textfield"
+                id="pastecontent"
+                aria-label="Paste Here"
+              >{{ paste.pastecontent }}</textarea>
+            </div>
+
+            <div class="maindiv maindiv3">
+              <br>
+              <button
+                type="button"
+                title="CopyCOntent"
+                class="mutton"
+                id="copy"
+                onclick="copyToClipboard()"
+              >
+                CopyContent
+              </button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </section>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="{% static 'script.js' %}"></script>
+
+    {% endblock %}
+  </body>
+</html>
+
+
+
+
+
+
+
+
+
+

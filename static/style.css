@@ -1,0 +1,350 @@
+body{
+    
+  background-color: #f2fefd;
+    padding-top: 0px;
+    margin-top: 0px;
+}
+
+/* nav */
+nav{
+    position: fixed;
+    width: 100%;
+    z-index: 998;
+    transition: all 0.3s ease;
+    font-family: 'Ubuntu', sans-serif;
+  }
+  nav.sticky{
+    background: #186F65;
+  }
+  nav .navbar{
+    width: 90%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: auto;
+  }
+  nav .navbar .logo a{
+    font-weight: 500;
+    font-size: 35px;
+    color: #186F65;
+    /* #4070f4; */
+    text-decoration: none;
+  }
+  nav.sticky .navbar .logo a{
+    color: #000000;
+  }
+  nav .navbar .menu{
+    display: flex;
+    position: relative;
+  }
+  nav .navbar .menu li{
+    list-style: none;
+    margin: 0 8px;
+  }
+  .navbar .menu a{
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: 500;
+    color: #0E2431;
+    padding: 6px 0;
+    transition: all 0.4s ease;
+  }
+  .navbar .menu a:hover{
+    color: #4070f4;
+  }
+  nav.sticky .menu a{
+    color: #0a0a0a;
+  }
+  nav.sticky .menu a:hover{
+    color: #0E2431;
+  }
+  .navbar .media-icons a{
+    color: #4070f4;
+    font-size: 18px;
+    margin: 0 6px;
+  }
+  nav.sticky .media-icons a{
+    color: #FFF;
+  }
+  
+  /* Side Navigation Menu Button CSS */
+  nav .menu-btn,
+  .navbar .menu .cancel-btn{
+    position: absolute;
+    color: #fff;
+    right: 10%;
+    top: 20px;
+    font-size: 20px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: none;
+  }
+  nav .menu-btn{
+    color: #186F65;
+  }
+  nav.sticky .menu-btn{
+    color: #000000;
+  }
+  .navbar .menu .menu-btn{
+    color: #fff;
+  }
+
+
+/* Responsive Hamburger Menu */
+.mobile-menu-icon {
+    display: none; /* Initially hidden on larger screens */
+    cursor: pointer;
+}
+
+.nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.ul li {
+    font-size: 18px;
+    color: #000000;
+    cursor: pointer;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .nav {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .ul {
+        margin-top: 10px;
+        display: none; /* Hide the menu items */
+    }
+
+    .mobile-menu-icon {
+        display: block; /* Display the hamburger icon on smaller screens */
+    }
+
+    .ul.open {
+        display: flex; /* Show the menu items when the mobile menu is open */
+        flex-direction: column;
+        gap: 10px;
+        margin-top: 10px;
+    }
+}
+
+
+/* defaults */
+.dark-text{
+    font-weight: bolder;
+    margin: 4px;
+
+}
+
+.btn{
+    margin: 2%;
+    width: 40vw;
+    height: 5vh;
+    /* background-color: rgba(255, 255, 255); */
+    border-radius: 4px;
+    border: none;
+
+}
+.btn:hover{
+    background-color: rgba(255, 255, 255, 0.5);
+    border: none;
+    cursor: pointer;
+}
+
+.textfield{
+    /* background-color: rgba(255, 255, 255, 0.295); */
+    background-color: #DDF2FD;
+    border-radius: 3px;
+    width: 100%;
+    border: none;
+    padding-left: 4px;
+
+}
+.textfield:focus{
+    background-color: #e6f6ff;
+    border: none;
+}
+
+
+.section2{
+    
+    /* background-color: rgba(255, 255, 255, 0.2); */
+    background-color: rgb(199, 235, 241);
+    border-radius: 3px;
+    padding: 20px;
+    box-shadow: 9px 7px 6px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px); /* Adjust the blur intensity */
+    border: 9px 9px solid rgba(255, 255, 255, 0.125);
+    margin: 9vw;
+    align-items: center;
+    align-content: center;
+    
+}
+
+.inputtitle{
+    height: 5vh;
+}
+.inputpaste{
+    height: 30vh;
+}
+
+/* home section styling */
+.home{
+    height: 100vh;
+    width: 100%;
+    background-attachment: fixed;
+    background-size: 100% 100%;
+  
+    font-family: 'Ubuntu', sans-serif;
+  }
+  .home .home-content{
+    width: 90%;
+    height: 100%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .home .text-one{
+    font-size: 25px;
+    color: #420f0f;
+    /* #0E2431; */
+  }
+  .home .text-two{
+    color: #186F65;
+    font-size: 75px;
+    font-weight: 600;
+    margin-left: -3px;
+  }
+  .home .text-three{
+    font-size: 40px;
+    margin: 5px 0;
+    color: #420f0f;
+  }
+  .home .text-four{
+    font-size: 23px;
+    margin: 5px 0;
+    color: #0E2431;
+  }
+  .home .button{
+    margin: 14px 0;
+  }
+  .home .button button {
+    outline: none;
+    padding: 8px 16px;
+    border-radius: 6px;
+    font-size: 25px;
+    font-weight: 400;
+    background: #186F65;
+    color: #fff;
+    cursor: pointer;
+    border: 2px solid transparent;
+    transition: all 0.4s ease;
+  }
+  .home .button button:hover{
+    border-color:#186F65;
+    background-color: #fff;
+    color: #186F65;
+  }
+  .mutton{
+    outline: none;
+    border-radius: 6px;
+    font-size: 25px;
+    font-weight: 400;
+    background: #186f6585;
+    color: #fff;
+    cursor: pointer;
+    border: 2px solid transparent;
+    transition: all 0.4s ease;
+  }
+
+
+
+
+
+@media (max-width: 750px) {
+    nav .navbar{
+      width: 90%;
+    }
+    nav .navbar .menu{
+      position: fixed;
+      left: 135%;
+      top: 0px;
+      background: #0E2431;
+      height: 100vh;
+      max-width: -webkit-fill-available;
+      width: 100%;
+      padding-top: 60px;
+      flex-direction: column;
+      align-items: center;
+      transition: all 0.5s ease;
+    }
+    .navbar.active .menu{
+      left: 0;
+    }
+    nav .navbar .menu a{
+      font-size: 23px;
+      display: block;
+      color: #fff;
+      margin: 10px 0;
+    }
+    nav.sticky .menu a:hover{
+      color: #4070f4;
+    }
+    nav .navbar .media-icons{
+      display: none;
+    }
+    nav .menu-btn,
+    .navbar .menu .cancel-btn{
+      display: block;
+    }
+
+    .home .text-two{
+      font-size: 65px;
+    }
+    .home .text-three{
+      font-size: 35px;
+    }
+    .skills .skills-details{
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+    }
+    .skills-details .text{
+      width: 100%;
+      margin-bottom: 50px;
+    }
+    .skills-details .boxes{
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+    }
+    .services .boxes .box{
+      margin: 20px 0;
+      width: 100%;
+    }
+    .contact .text{
+      width: 100%;
+  }
+  }
+
+
+  /* footer section start */
+  .footer{
+    height: 70px;
+    background: #0E2431;
+    color: #fff;
+    font-size: 14px;
+    padding: 20px 0;
+    font-family: 'Ubuntu', sans-serif;
+  }
